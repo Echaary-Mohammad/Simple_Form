@@ -1,0 +1,274 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("./bg-intro-desktop.png");
+}
+
+.over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(243, 65, 65, 0.65);
+}
+
+:focus {
+    outline: none;
+}
+
+// variables 
+$red: hsl(0,
+100%,
+74%);
+$green:hsl(154,
+59%,
+51%);
+$greenShadow:rgb(37,
+169,
+112);
+$greenHover:rgb(86,
+233,
+169);
+$blue:hsl(248,
+32%,
+49%);
+$darkblue:rgba(62,
+60,
+73,
+.4);
+$Grayish :hsl(246,
+25%,
+77%);
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .text {
+        color: white;
+        text-align: center;
+        h1 {
+            font-size: 2.1rem;
+            width: 40%;
+            margin-right: auto;
+            margin-left: auto;
+            font-weight: 800;
+        }
+        p {
+            font-size: 1.3rem;
+            font-weight: 400;
+            width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+            color: rgb(244, 240, 240)
+        }
+    }
+    .box {
+        // position: relative;
+        flex-basis: 70%;
+        margin-right: auto;
+        margin-left: auto;
+        .header {
+            background-color: $blue;
+            color: rgb(244, 240, 240);
+            font-size: 1.4rem;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 0px $darkblue;
+            margin-bottom: 30px;
+            span {
+                color: white;
+                font-weight: 700;
+            }
+        }
+        .form {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            .group {
+                margin-bottom: 30px;
+                position: relative;
+                input {
+                    display: block;
+                    width: 100%;
+                    border: 1px solid $Grayish;
+                    padding: 20px;
+                    font-size: 1.2rem;
+                    border-radius: 10px;
+                    font-weight: 600;
+                    &:focus {
+                        border-color: black;
+                    }
+                }
+                .message {
+                    position: absolute;
+                    left: 10px;
+                    bottom: -42px;
+                    color: red;
+                    font-size: 1rem;
+                }
+                .fa-exclamation-circle {
+                    display: none;
+                    position: absolute;
+                    right: 15px;
+                    color: red;
+                    font-size: 1.6rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                .fa-check-circle {
+                    display: none;
+                    position: absolute;
+                    right: 15px;
+                    color: green;
+                    font-size: 1.6rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                .showHide {
+                    position: absolute;
+                    right: 50px;
+                    font-size: 1.7rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: $blue;
+                    cursor: pointer;
+                }
+            }
+            .submit {
+                display: block;
+                width: 100%;
+                padding: 20px;
+                color: white;
+                background-color: $green;
+                font-size: 1.5rem;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                box-shadow: 0px 6px 0px $greenShadow;
+                &:hover {
+                    background-color: $greenHover;
+                }
+            }
+            .condition {
+                color: rgb(164, 161, 161);
+                font-size: 1.068rem;
+                margin-bottom: 0;
+                span {
+                    color: $red;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:768px)and(max-width:991px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width:992px)and(max-width:1200px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width:1201px) {
+    .container {
+        width: 1170px;
+        .text {
+            flex-basis: 50%;
+            h1 {
+                width: 70%;
+                font-size: 2.8rem;
+            }
+            p {
+                font-size: 1.7rem;
+                line-height: 2;
+                width: 90%;
+            }
+        }
+        .box {
+            flex-basis: 50%
+        }
+    }
+}
+
+@media (max-width:767px) {
+    body {
+        background-image: none;
+        .container {
+            position: relative;
+            width: 1170px;
+            padding-top: 800px;
+            .text {
+                flex-basis: 100%;
+                h1 {
+                    width: 60%;
+                    font-size: 1.3rem;
+                }
+                p {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    width: 90%;
+                }
+            }
+            .box {
+                flex-basis: 100%;
+                .header {
+                    font-size: 1rem;
+                    width: fit-content;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                }
+                .form {
+                    padding: 13px 7px;
+                    width: 95%;
+                    margin-right: auto;
+                    margin-left: auto;
+                    border-radius: 10px;
+                    .group {
+                        margin-bottom: 20px;
+                        input {
+                            padding: 12px 10px;
+                            font-size: 1rem;
+                        }
+                        .message {
+                            font-size: .7rem;
+                            bottom: -28px;
+                        }
+                        .showHide {
+                            font-size: 1.5rem
+                        }
+                    }
+                    .submit {
+                        font-size: 1.2rem;
+                    }
+                    .condition {
+                        font-size: .8rem;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
